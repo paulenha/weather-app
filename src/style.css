@@ -25,6 +25,10 @@ li:first-letter {
   text-transform: capitalize;
 }
 
+a {
+  text-decoration: none;
+}
+
 .weather-app {
   padding: 20px;
   border: 1px solid #dadde1;
@@ -54,4 +58,13 @@ li:first-letter {
   position: relative;
   font-size: 16px;
   top: -34px;
+}
+
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
