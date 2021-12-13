@@ -74,6 +74,7 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+  let feelsElement = document.querySelector("#feels");
 
   celsiusTemp = response.data.main.temp;
 
@@ -81,6 +82,7 @@ function displayTemperature(response) {
   cityElement.innerHTML = response.data.name;
   conditionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
+  feelsElement.innerHTML = response.data.main.feels_like;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
@@ -90,6 +92,8 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
+
+  console.log(response.data);
 }
 function search(city) {
   let apiKey = "481e368995b179f7b5471393b825546c";
